@@ -6,7 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Braintree" Version="5.5.0" />
     <PackageReference Include="Mailjet.Api" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="5.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.5" />
@@ -18,11 +20,18 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="Syncfusion.EJ2.AspNet.Core" Version="19.1.0.59" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\images\product\" />
     <Folder Include="wwwroot\templates\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProductRocky_DataAccess\ProductRocky_DataAccess.csproj" />
+    <ProjectReference Include="..\ProductRocky_Models\ProductRocky_Models.csproj" />
+    <ProjectReference Include="..\Rocky_Utility\ProductRocky_Utility.csproj" />
   </ItemGroup>
 
 </Project>

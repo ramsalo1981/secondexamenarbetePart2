@@ -7,8 +7,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ProductRocky.Data;
-using ProductRocky.Utility;
+using ProductRocky_DataAccess;
+using ProductRocky_DataAccess.Repository;
+using ProductRocky_DataAccess.Repository.IRepository;
+using ProductRocky_Utility;
+using ProductRocky_Utility.BrainTree;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +50,25 @@ namespace ProductRocky
                 Options.IdleTimeout = TimeSpan.FromMinutes(10);
                 Options.Cookie.HttpOnly = true;
                 Options.Cookie.IsEssential = true;
+            });
+            services.Configure<BrainTreeSettings>(Configuration.GetSection("BrainTree"));
+            services.AddSingleton<IBrainTreeGate, BrainTreeGate>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IApplicationTypeRepository, ApplicationTypeRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IInquiryHeaderRepository, InquiryHeaderRepository>();
+            services.AddScoped<IInquiryDetailRepository, InquiryDetailRepository>();
+            services.AddScoped<IApplicationUserRepository, ApplicationUserRepository>();
+
+            services.AddScoped<IOrderHeaderRepository, OrderHeaderRepository>();
+            services.AddScoped<IOrderDetailRepository, OrderDetailRepository>();
+
+            //services.AddScoped<IDbInitializer, DbInitializer>();
+           
+            services.AddAuthentication().AddFacebook(Options =>
+            {
+                Options.AppId = "148533190568919";
+                Options.AppSecret = "3995c735b923b02c1a00f1001c8b67bb";
             });
         }
 

@@ -21,13 +21,13 @@ using ProductRocky;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\ramis\Desktop\asp udemy\ProductRocky\Views\_ViewImports.cshtml"
-using ProductRocky.Models;
+using ProductRocky_Models;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5b5094b294b683289f4cbe0e23c7c315c0aa9fda", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"be5e6c9d66cdffc080ee12db892883266b77c4e3", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998
